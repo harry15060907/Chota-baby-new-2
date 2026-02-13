@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chhota Baby Proposal 💖</title>
+<style>
+body {
+  background: pink;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  padding-top: 30px;
+}
+
+h1 {
+  font-size: 32px;
+  color: #ff0055;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yesBtn {
+  background: #00ff99;
+}
+
+#noBtn {
+  background: #ff4444;
+  position: absolute;
+}
+
+img {
+  max-width: 280px;
+  border-radius: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1">
+  <img src="https://media.giphy.com/media/1d5U0fWb6j6g/giphy.gif"><br><br>
+  <h1>Will you be my chhota baby? 🥺💖</h1>
+  <button id="yesBtn" onclick="goToPage2()">Yes 😘</button>
+  <button id="noBtn">No 😏</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" style="display:none;">
+  <h1>Are you sure about that? 🤨</h1>
+  <img src="https://media.giphy.com/media/3o6ZtpxSZbQRRnwCKQ/giphy.gif"><br><br>
+  <button onclick="finalYes()">Yes 😍</button>
+  <button onclick="showJhoothi()">No 😂</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" style="display:none;">
+  <h1>Chall Jhoothi 😜</h1>
+  <img src="https://media.giphy.com/media/l1J9EdzfOSgfyueLm/giphy.gif"><br><br>
+  <button onclick="goToPage2()">Return 🔙</button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" style="display:none;">
+  <h1>Welcome to Cutu Baby House 💕</h1>
+  <img src="https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif">
+</div>
+
+<script>
+// NO button moving
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", () => {
+  let x = Math.random() * (window.innerWidth - 150);
+  let y = Math.random() * (window.innerHeight - 150);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+// Page navigation
+function goToPage2() {
+  document.getElementById("page1").style.display = "none";
+  document.getElementById("page2").style.display = "block";
+  document.getElementById("page3").style.display = "none";
+  document.getElementById("page4").style.display = "none";
+}
+
+function showJhoothi() {
+  document.getElementById("page2").style.display = "none";
+  document.getElementById("page3").style.display = "block";
+}
+
+function finalYes() {
+  document.getElementById("page2").style.display = "none";
+  document.getElementById("page4").style.display = "block";
+}
+</script>
+
+</body>
+</html>
